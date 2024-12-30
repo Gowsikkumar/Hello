@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User-form</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body id="kk">
+<center>
+<h1><span style="color:blue" >User Registration Form</span></h1>
+<form th:action="@{/next}" th:object="${user}" method="post">
+    <div>
+        <label for="user">UserName:
+            <input  type="text" id="user" th:field="*{UserName}">
+            <span th:if="${#fields.hasErrors('UserName')}" th:errors="*{UserName}"></span>
+        </label><br><br>
+    </div>
+
+    <div>
+        <label for="email">Email:
+            <input type="email" id="email" th:field="*{Email}">
+            <span th:if="${#fields.hasErrors('Email')}" th:errors="*{Emial}"></span>
+        </label><br><br>
+    </div>
+
+    <div>
+        <label for="pass">Password:
+            <input type="password" id="pass" th:field="*{Password}">
+            <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></span>
+        </label><br><br>
+    </div>
+    <button type="submit"><span style="color:green">Register</span></button>
+
+
+
+
+</form>
+</center>
+</body>
+
+</html>

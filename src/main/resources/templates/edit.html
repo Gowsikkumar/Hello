@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<center>
+<form th:action="@{'/update/'+${users.id}}" method="post">
+
+    <label for="user"><span style="color:green">Enter UserName</span>
+    <input type="text" id="user" th:value="${users.UserName}" name="UserName"
+           placeholder="Enter UserName">
+</label><br><br>
+
+
+    <label for="email"><span style="color:green">Enter Email</span>
+        <input type="text" id="email" th:value="${users.Email}" name="Email"
+               placeholder="Enter Email">
+    </label><br><br>
+
+
+    <lable for="pass"><span style="color:green">Enter Password</span>
+        <input type="password" id="pass" th:value="${users.Password}" name="Password"
+               placeholder="Enter Password">
+    </lable><br><br>
+    <button type="submit">update</button>
+
+</form>
+</center>
+</body>
+</html>
